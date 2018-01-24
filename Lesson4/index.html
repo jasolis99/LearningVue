@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <ul>
+            <li v-for = "tarea in tareas">
+                {{ tarea }}
+            </li>
+        </ul>
+
+        <!-- En caso de formulario -->
+        
+        <form v-on:submit.prevent = "agregarTarea">
+                <input type = "text" placeholder = "Introduce tu tarea" v-model = "nuevaTarea" >
+                <input type = "submit" value="Enviar tarea">
+        </form>
+
+        <!-- En el caso de que no sea un formulario -->
+
+        <!-- <input type = "text" placeholder = "Introduce tu tarea" v-model = "nuevaTarea" >
+        <input type = "button" value="Enviar tarea" v-on:click = "agregarTarea"> -->
+
+
+
+
+        <pre>{{ $data }}</pre>
+
+    </main>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
