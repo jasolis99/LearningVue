@@ -28,7 +28,7 @@ const vm = new Vue({
         agregarTarea(){
 
             // console.log('Funciona')
-            // this, hace referencia a la instancia Vue
+            // this, makes references to Vue instance
             this.tareas.unshift(this.nuevaTarea);
             this.nuevaTarea = null;
 
