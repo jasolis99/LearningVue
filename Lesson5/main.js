@@ -29,7 +29,11 @@ const vm = new Vue({
 
             // console.log('Funciona')
             // this, makes references to Vue instance
-            this.tareas.unshift(this.nuevaTarea);
+            this.tareas.unshift({
+                titulo: this.nuevaTarea,
+                prioridad: false,
+                antiguedad: 0,
+            });
             this.nuevaTarea = null;
 
 
