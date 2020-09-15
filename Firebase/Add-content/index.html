@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First Firebase Lesson</h1>
+    <p id="mensaje">Adding content to database</p>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script> -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZptdcbRSWCdtydToQT3svARjcsGcWC2s",
+    authDomain: "curso-vue-firebase-b1ab2.firebaseapp.com",
+    databaseURL: "https://curso-vue-firebase-b1ab2.firebaseio.com",
+    projectId: "curso-vue-firebase-b1ab2",
+    storageBucket: "curso-vue-firebase-b1ab2.appspot.com",
+    messagingSenderId: "755776182053",
+    appId: "1:755776182053:web:191840fb1fea3c5018accc"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  firebase.database().ref('/perfiles/josealberto').set({
+      username: 'josealbertosolis',
+      password: '12345',
+      city: 'Badajoz',
+      country: 'Spain',
+
+  }).then(()=>{document.getElementById("mensaje").innerHTML = "Datos añadidos correctamente"});
+</script>
+</html>

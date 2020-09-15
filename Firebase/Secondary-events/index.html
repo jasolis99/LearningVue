@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+</head>
+<body>
+<div id="app">
+    <h1>Eight Firebase Lesson</h1>
+    <p>{{ result }}</p>
+</div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script> -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDZptdcbRSWCdtydToQT3svARjcsGcWC2s",
+    authDomain: "curso-vue-firebase-b1ab2.firebaseapp.com",
+    databaseURL: "https://curso-vue-firebase-b1ab2.firebaseio.com",
+    projectId: "curso-vue-firebase-b1ab2",
+    storageBucket: "curso-vue-firebase-b1ab2.appspot.com",
+    messagingSenderId: "755776182053",
+    appId: "1:755776182053:web:191840fb1fea3c5018accc"
+  };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Vue stuff
+    new Vue({
+        el: '#app',
+        data:{
+          result: null,
+        },
+        created() {
+          const chats = db.ref('chats');
+
+          //chats.on('child_added',(data)=>this.result = data.key)
+
+          //chats.on('child_removed',(data)=>this.result = data.key)
+
+          //chats.on('child_changed',(data)=>this.result = data.key)
+
+        }
+          
+    });
+</script>
+</body>
+</html>
