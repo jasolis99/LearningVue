@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <empleados-component
+            v-for="empleado in empleados"
+            :nombre="empleado.name.first"
+            :correo="empleado.email"
+            :imagen="empleado.picture.thumbnail"
+            :localizacion="empleado.location"></empleados-component>
+
+    </main>
+
+    <template id="empleados-template">
+        <blockquote>
+            <img :src="imagen" alt="" align="right">
+            <h1>{{nombre}}</h1>
+            <h2>{{correo}}</h2>
+            <ul>
+                <li v-for ="(value,key,index) in localizacion"> {{value}} </li>
+            </ul>
+            <hr/>
+        </blockquote>
+    </template>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
